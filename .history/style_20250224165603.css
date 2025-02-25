@@ -1,0 +1,377 @@
+@font-face {
+   font-family: 'arialround';
+   src: url('arialroundedmtbold.ttf');
+ }
+ 
+ /* General Styles */
+ *,
+ *::before,
+ *::after {
+   box-sizing: border-box;
+ }
+ 
+ body {
+   font-family: 'arialround', sans-serif;
+   margin: 0;
+   padding: 0;
+   color: #333;
+   overflow: hidden; /* Hide overflow until animation ends */
+ }
+ 
+ /* Header */
+ header {
+   color: #6ac045;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: #fff;
+   padding: 5px 20px;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+   flex-wrap: wrap;
+ }
+ 
+ .logo {
+   display: flex;
+   align-items: center;
+ }
+ 
+ #logo-header {
+   width: 50px;
+   height: 50px;
+   margin-right: 10px;
+ }
+ 
+ #logo-header-text {
+   font-size: 2rem;
+   color: #6ac045;
+   margin: 0;
+ }
+ 
+ nav ul {
+   list-style: none;
+   display: flex;
+   gap: 40px;
+   font-size: 18px;
+   margin: 0;
+   padding: 0;
+ }
+ 
+ nav a {
+   text-decoration: none;
+   color: #6ac045;
+   transition: color 0.3s;
+ }
+ 
+ nav a:hover {
+   color: #55a035;
+ }
+ 
+ /* Hero Section */
+ .hero {
+   background-color: #f9f9f9;
+   background-size: contain;
+   text-align: center;
+   padding: 100px 20px;
+   color: #333;
+ }
+ 
+ .hero-content h2 {
+   font-size: 2.5em;
+   margin: 0.5em 0;
+ }
+ 
+ .hero-content p {
+   font-size: 1.2em;
+ }
+ 
+ .cta {
+   display: inline-block;
+   margin-top: 20px;
+   padding: 10px 20px;
+   background-color: #6ac045;
+   color: white;
+   border-radius: 5px;
+   text-decoration: none;
+   transition: background-color 0.3s;
+ }
+ 
+ .cta:hover {
+   background-color: #55a035;
+ }
+ 
+ /* Features, Values, Contact, and Team Sections */
+ .features,
+ .values,
+ .contact,
+ .team {
+   padding: 60px 20px;
+   text-align: center;
+ }
+ 
+ .features h2,
+ .values h2,
+ .contact h2,
+ .team h2 {
+   margin-bottom: 40px;
+   font-size: 2em;
+ }
+ 
+ .feature-list,
+ .value-list {
+   display: flex;
+   justify-content: center;
+   gap: 30px;
+   flex-wrap: wrap;
+ }
+ 
+ .feature-item,
+ .value-item {
+   width: 300px;
+   padding: 20px;
+   background-color: #fff;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+   border-radius: 40px;
+   margin-bottom: 20px;
+ }
+ 
+ .feature-item img {
+   width: 100%;
+   border-radius: 8px;
+ }
+ 
+ /* Contact Form */
+ .contact form {
+   max-width: 500px;
+   margin: 0 auto;
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+ }
+ 
+ input,
+ textarea {
+   padding: 10px;
+   border: 1px solid #ddd;
+   border-radius: 5px;
+   font-size: 1em;
+ }
+ 
+ button {
+   padding: 10px;
+   background-color: #6ac045;
+   color: white;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+   transition: background-color 0.3s;
+ }
+ 
+ button:hover {
+   background-color: #55a035;
+ }
+ 
+ /* Footer */
+ footer {
+   background-color: #f9f9f9;
+   color: #6ac045;
+   text-align: center;
+   padding: 10px 0;
+ }
+ 
+ /* Harvesting Animation */
+ .harvesting-animation {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   z-index: 9999;
+   background: rgba(250, 250, 250, 0.79);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .harvesting-tool {
+   width: 200px;
+   height: 200px;
+   background: rgba(169, 238, 173, 0.99);
+   border-radius: 50%;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   animation: harvest 2s forwards;
+ }
+ 
+ .harvesting-logo {
+   width: 70px;
+   height: auto;
+ }
+ 
+ @keyframes harvest {
+   0% {
+     transform: translate(-50%, -50%) scale(1);
+     opacity: 1;
+   }
+   50% {
+     transform: translate(-50%, -50%) scale(2);
+     opacity: 0.5;
+   }
+   100% {
+     transform: translate(-50%, -50%) scale(3) translateY(-100%);
+     opacity: 0;
+     background: transparent;
+   }
+ }
+ 
+ /* Team Section */
+ .team-videos {
+   display: flex;
+   justify-content: center;
+   gap: 40px;
+   flex-wrap: wrap;
+ }
+ 
+ .video-container {
+   width: 45%;
+ }
+ 
+ video {
+   width: 100%;
+   border-radius: 30px;
+ }
+ 
+ /* Popup Styles */
+ .popup {
+   display: none; /* Hidden by default */
+   position: fixed;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   z-index: 1000;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+ .popup-content {
+   background-color: #fff;
+   padding: 20px;
+   border-radius: 50px;
+   width: 90%;
+   max-width: 400px;
+   text-align: center;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+ }
+ 
+ .popup-button {
+   background-color: #6ac045;
+   color: #fff;
+   padding: 10px 20px;
+   border: none;
+   border-radius: 50px;
+   cursor: pointer;
+   margin: 10px 5px;
+   transition: background-color 0.3s;
+ }
+ 
+ .popup-button:hover {
+   background-color: #55a035;
+ }
+ 
+ .close-btn {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   cursor: pointer;
+   font-size: 1.2rem;
+   color: #333;
+ }
+ 
+ /* Media Queries for Responsiveness */
+ 
+ /* Tablets and Small Laptops */
+ @media (max-width: 768px) {
+   header {
+     flex-direction: column;
+     align-items: flex-start;
+     padding: 10px;
+   }
+ 
+   nav ul {
+     flex-wrap: wrap;
+     gap: 20px;
+     margin-top: 10px;
+   }
+ 
+   .hero {
+     padding: 80px 20px;
+   }
+ 
+   .hero-content h2 {
+     font-size: 2em;
+   }
+ 
+   .hero-content p {
+     font-size: 1em;
+   }
+ 
+   .feature-list,
+   .value-list {
+     flex-direction: column;
+     align-items: center;
+   }
+ 
+   .feature-item,
+   .value-item {
+     width: 80%;
+   }
+ 
+   .team-videos {
+     flex-direction: column;
+     gap: 20px;
+   }
+ 
+   .video-container {
+     width: 100%;
+   }
+ }
+ 
+ /* Mobile Phones */
+ @media (max-width: 480px) {
+   nav ul {
+     flex-direction: column;
+     gap: 10px;
+     text-align: center;
+     width: 100%;
+   }
+ 
+   header {
+     padding: 10px;
+   }
+ 
+   .cta {
+     padding: 8px 16px;
+   }
+ 
+   input,
+   textarea,
+   button {
+     font-size: 0.9em;
+   }
+   
+   /* Adjust padding for sections */
+   .features,
+   .values,
+   .contact,
+   .team {
+     padding: 40px 10px;
+   }
+ }
+ 

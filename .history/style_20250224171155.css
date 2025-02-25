@@ -1,0 +1,426 @@
+@font-face {
+  font-family: 'arialround';
+  src: url('arialroundedmtbold.ttf');
+}
+/* General Styles */
+
+body {
+  font-family: 'arialround', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #333;
+  overflow: auto; /* Hide overflow until animation ends */
+}
+
+#Home{
+  margin-top: -100px;
+}
+
+header {
+  color: #6ac045;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding: 5px 20px;
+}
+
+.main-video {
+  width: 80%; /* Adjust the width to make the video smaller */
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 20px;
+  margin-top: 100px;
+}
+
+.logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  display: inline;
+  color: #6ac045;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  font-size: 18px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #6ac045;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #55a035;
+}
+
+.hero {
+  background-size: contain;
+  text-align: center;
+  padding: 100px 20px;
+  color: #333;
+}
+
+.hero-content h2 {
+  font-size: 2.5em;
+  margin: 0.5em 0;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #6ac045;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.cta:hover {
+  background-color: #55a035;
+}
+
+.features, .values, .contact, .team {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features h2, .values h2, .contact h2, .team h2 {
+  margin-bottom: 40px;
+  margin-top: 42px;
+}
+
+.features h3, .values h3, .contact h3, .team h3 {
+  font-size: 30px;
+  color: #6AC045;
+}
+
+.features p, .values p, .contact p, .team p {
+  font-size: 18px;
+  color: #FFC067;
+}
+
+.feature-list, .value-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  width: 300px;
+  padding: 20px;
+  border-radius: 40px;
+}
+
+.value-item {
+  width: 300px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  border-radius: 40px;
+}
+
+.feature-item img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input, textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+button {
+  padding: 10px;
+  background-color: #6ac045;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #55a035;
+}
+
+footer {
+  background-color: #f9f9f9;
+  color: #6ac045;
+  text-align: center;
+  padding: 10px 0;
+}
+
+#logo-header {
+  margin-top: 10px;
+  padding-left: 5vh;
+  width: 220px;
+}
+
+#logo-header-text {
+  margin-top: 10px;
+  color: #6ac045;
+  right: 200vh;
+  padding-right: 140vh;
+  margin-left: -70px;
+  padding-top: 2.5vh;
+  font-size: 5vh;
+  font-family: 'arialround';
+}
+
+#try-app-button {
+  padding: 10px 16px;
+  margin-right: 50px;
+  background-color: #FFC067;
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-size: 15px;
+}
+
+/* Team Section Styles */
+.team {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.team-videos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 45%;
+}
+
+video {
+  width: 100%;
+  border-radius: 30px;
+}
+
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 50px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.popup-button {
+  background-color: #6ac045;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  margin: 10px 5px;
+  transition: background-color 0.3s;
+}
+
+.popup-button:hover {
+  background-color: #55a035;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+#open-text {
+  font-size: 70px;
+  color: #86D861;
+}
+
+#under-open-text {
+  font-size: 30px;
+  color: #FFB144;
+}
+
+.Htwo {
+  font-size: 55px;
+  color: #86D861;
+}
+
+/* Base styles for the sections */
+section, .feature-item, .value-item {
+  opacity: 0;
+  transform: translateY(40px); /* Start further below for a more dramatic effect */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Animation class to apply when elements should be visible */
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation for the initial load */
+@keyframes initialLoad {
+  from {
+    opacity: 0;
+    transform: translateY(90px); /* More pronounced initial rise */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.initial-load {
+  animation: initialLoad 1s ease-out;
+}
+
+/* Initial state for elements before they come into view */
+.animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* State when elements are in view */
+.animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial state for header and button */
+.header-animate {
+  opacity: 0;
+  transform: translateY(-50px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* State when header and button are in view */
+.header-animate.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Additional styling to ensure smooth transition */
+.header-animate, .animate {
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .hero-content h2 {
+    font-size: 2em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .feature-item, .value-item {
+    width: 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 1.5em;
+  }
+
+  .hero-content p {
+    font-size: 0.9em;
+  }
+
+  .feature-item, .value-item {
+    width: 100%;
+  }
+
+  .team-videos {
+    flex-direction: column;
+  }
+
+  .video-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h2 {
+    font-size: 1.2em;
+  }
+
+  .hero-content p {
+    font-size: 0.8em;
+  }
+
+  #open-text {
+    font-size: 2em;
+  }
+
+  #under-open-text {
+    font-size: 1em;
+  }
+
+  .cta {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  #try-app-button {
+    padding: 8px 12px;
+    font-size: 0.8em;
+  }
+}

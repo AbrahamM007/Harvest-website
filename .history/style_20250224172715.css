@@ -1,0 +1,395 @@
+/* Define custom properties for a consistent color scheme */
+:root {
+  --primary: #6ac045;
+  --primary-dark: #55a035;
+  --accent: #FFC067;
+  --background: #ffffff;
+  --light-gray: #f9f9f9;
+  --text-color: #333333;
+  --subtext-color: #666666;
+}
+
+/* Custom Font */
+@font-face {
+  font-family: 'arialround';
+  src: url('arialroundedmtbold.ttf');
+}
+
+/* General Styles */
+body {
+  font-family: 'arialround', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--text-color);
+  background-color: var(--background);
+  overflow-x: hidden;
+}
+
+#Home {
+  margin-top: -100px;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--background);
+  padding: 10px 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.logo h1 {
+  display: inline;
+  color: var(--primary);
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+#try-app-button {
+  padding: 10px 20px;
+  background-color: var(--accent);
+  border: none;
+  border-radius: 30px;
+  color: var(--background);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#try-app-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+  color: var(--background);
+  text-align: center;
+  padding: 120px 20px;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-content h2 {
+  font-size: 3rem;
+  margin: 0.5em 0;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Main Video in Hero */
+.main-video {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin: 20px auto;
+  display: block;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* Sections (Features, Values, Contact, Team) */
+section {
+  padding: 80px 20px;
+  text-align: center;
+  background-color: var(--background);
+}
+
+.features, 
+.values, 
+.contact, 
+.team {
+  padding: 80px 20px;
+}
+
+.features h2,
+.values h2,
+.contact h2,
+.team h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: var(--primary);
+}
+
+.features h3,
+.values h3,
+.contact h3,
+.team h3 {
+  font-size: 1.5rem;
+  color: var(--primary);
+  margin-bottom: 15px;
+}
+
+.features p,
+.values p,
+.contact p,
+.team p {
+  font-size: 1rem;
+  color: var(--subtext-color);
+  line-height: 1.6;
+}
+
+/* Feature and Value Lists */
+.feature-list, .value-list {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.feature-item, .value-item {
+  background-color: var(--light-gray);
+  width: 300px;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature-item:hover, .value-item:hover {
+  transform: translateY(-5px);
+}
+
+.feature-item img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+/* Contact Form */
+.contact form {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, 
+textarea {
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px;
+  background-color: var(--primary);
+  color: var(--background);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Popup Modal */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-content {
+  background-color: var(--background);
+  padding: 30px;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.popup-button {
+  background-color: var(--primary);
+  color: var(--background);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.popup-button:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+/* Team Section */
+.team-videos {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.video-container {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  border-radius: 20px;
+}
+
+video {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* Footer */
+footer {
+  background-color: var(--light-gray);
+  color: var(--primary);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+}
+
+/* Animations for Scroll Reveal */
+section, .feature-item, .value-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Initial Load Animation */
+@keyframes initialLoad {
+  from {
+    opacity: 0;
+    transform: translateY(90px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.initial-load {
+  animation: initialLoad 1s ease-out;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .feature-item, .value-item {
+    width: 45%;
+  }
+  
+  .main-video, .video-container {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.9rem;
+  }
+  
+  .feature-item, .value-item {
+    width: 100%;
+  }
+  
+  .team-videos {
+    flex-direction: column;
+  }
+  
+  .main-video, .video-container {
+    max-width: 95%;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+  
+  .hero-content p {
+    font-size: 0.8rem;
+  }
+  
+  #try-app-button {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+  
+  .main-video, .video-container {
+    max-width: 100%;
+  }
+}
