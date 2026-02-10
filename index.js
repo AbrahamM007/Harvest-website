@@ -93,4 +93,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.addEventListener('scroll', handleScrollAnimations);
     handleScrollAnimations(); // Initial check for elements in view
+
+    // Legal Modals Logic
+    const privacyLink = document.querySelector('a[href="#privacy"]'); // Add ID or update selector
+    const termsLink = document.querySelector('a[href="#terms"]');     // Add ID or update selector
+    const privacyModal = document.getElementById('privacyModal');
+    const termsModal = document.getElementById('termsModal');
+    const closeButtons = document.querySelectorAll('.close-legal');
+
+    // Function to open modal
+    function openModal(modal) {
+        if (modal) {
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('show');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+    }
+
+    // Function to close modal
+    function closeModal(modal) {
+        if (modal) {
+            modal.classList.remove('show');
+            setTimeout(() => {
+                modal.style.display = 'none';
+            }, 300); // Wait for transition
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Event Listeners for Links (We need to update HTML to give them IDs or specific hrefs)
+    // For now assuming we update the HTML links to href="#privacy" and href="#terms"
+    if (privacyLink) {
+        privacyLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(privacyModal);
+        });
+    }
+
+    if (termsLink) {
+        termsLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            openModal(termsModal);
+        });
+    }
+
+    // Close buttons
+    closeButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+            closeModal(btn.closest('.legal-modal'));
+        });
+    });
+
+    // Close on click outside
+    window.addEventListener('click', (e) => {
+        if (e.target.classList.contains('legal-modal')) {
+            closeModal(e.target);
+        }
+    });
 });
