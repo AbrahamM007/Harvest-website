@@ -64,44 +64,41 @@ img {
 }
 
 .nav-content {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.95); /* Slightly more opaque */
+    backdrop-filter: blur(16px); /* Stronger blur */
+    -webkit-backdrop-filter: blur(16px);
+    padding: 8px 12px 8px 24px; /* Asymmetric padding: more on left for logo, less on right for button */
     border-radius: var(--radius-pill);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08); /* Slightly stronger shadow for depth */
     display: flex;
     align-items: center;
-    gap: 40px;
-    border: 1px solid var(--glass-border);
+    gap: 30px; /* Reduced gap for tighter uniformity */
+    border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
 .logo-pill {
     display: flex;
     align-items: center;
-    gap: 10px;
+    /* gap: 10px; removed gap since text is gone */
 }
 
 .logo-pill img {
-    height: 32px;
+    height: 28px; /* Slightly smaller logo */
+    width: auto;
 }
 
-.logo-text {
-    font-family: var(--font-heading);
-    color: var(--primary);
-    font-size: 1.2rem;
-}
+/* Removed logo-text style */
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 24px; /* Tighter links */
 }
 
 .nav-links a {
     font-weight: 500;
-    color: var(--dark-green);
+    color: #555; /* Softer gray */
     transition: color 0.3s;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
 }
 
 .nav-links a:hover {
@@ -111,16 +108,18 @@ img {
 .btn-pill {
     background: var(--primary);
     color: white;
-    padding: 8px 20px;
+    padding: 10px 24px; /* Larger button hit area */
     border-radius: var(--radius-pill);
     font-weight: 600;
     font-size: 0.9rem;
-    transition: transform 0.2s, background 0.3s;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 10px rgba(106, 192, 69, 0.2);
 }
 
 .btn-pill:hover {
     background: var(--primary-dark);
-    transform: translateY(-2px);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 15px rgba(106, 192, 69, 0.3);
 }
 
 /* =========================================
@@ -478,20 +477,155 @@ input:focus, textarea:focus {
     box-shadow: 0 5px 15px rgba(106, 192, 69, 0.3);
 }
 
-footer {
-    padding: 40px 20px;
-    text-align: center;
-    background: white;
+/* =========================================
+   Hero Shapes & Animations
+   ========================================= */
+.hero-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
 }
 
-.footer-logo {
-    height: 40px;
-    margin: 0 auto 20px;
-    opacity: 0.8;
+.shape {
+    position: absolute;
+    filter: blur(50px);
+    opacity: 0.6;
+    animation: float 10s infinite ease-in-out;
+}
+
+.shape-1 {
+    top: -10%;
+    left: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(106, 192, 69, 0.4) 0%, rgba(106, 192, 69, 0) 70%);
+    animation-delay: 0s;
+}
+
+.shape-2 {
+    bottom: 10%;
+    right: -5%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 192, 103, 0.4) 0%, rgba(255, 192, 103, 0) 70%);
+    animation-delay: -5s;
+}
+
+.shape-3 {
+    top: 40%;
+    left: 40%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(106, 192, 69, 0.3) 0%, rgba(106, 192, 69, 0) 70%);
+    animation-delay: -2s;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, -30px); }
+}
+
+.pulse-animation {
+    animation: pulse-glow 2s infinite;
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
+    50% { box-shadow: 0 15px 30px rgba(106, 192, 69, 0.4); }
+    100% { box-shadow: 0 10px 20px rgba(0,0,0,0.2); }
 }
 
 /* =========================================
-   Responsive
+   WOW Organic Footer
+   ========================================= */
+.footer-wow {
+    background-color: var(--dark-green);
+    color: white;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.footer-wave {
+    position: absolute;
+    top: -100px; /* Pull wave up to overlap previous section */
+    left: 0;
+    width: 100%;
+    line-height: 0;
+    z-index: 10;
+}
+
+.footer-content-wow {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 40px;
+    z-index: 20;
+    position: relative;
+}
+
+.footer-brand {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo-large {
+    height: 60px;
+    margin-bottom: 20px;
+    filter: brightness(0) invert(1); /* Make logo white */
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+}
+
+.link-group h4 {
+    color: var(--secondary);
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.link-group a {
+    display: block;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 12px;
+    transition: color 0.3s;
+}
+
+.link-group a:hover {
+    color: var(--primary);
+    transform: translateX(5px);
+    display: inline-block;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.9rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   Responsive Adjustments
    ========================================= */
 @media (max-width: 1024px) {
     .hero-title {
@@ -537,5 +671,20 @@ footer {
     
     .bento-card {
         padding: 30px;
+    }
+
+    .footer-content-wow {
+        flex-direction: column;
+        padding-top: 60px;
+    }
+    
+    .footer-links {
+        gap: 40px;
+        width: 100%;
+        justify-content: space-between;
+    }
+    
+    .hero-shapes .shape {
+        opacity: 0.4; /* Tone down on mobile */
     }
 }
