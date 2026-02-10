@@ -1,130 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Harvest</title>
-   <link rel="stylesheet" href="style.css">
-   <link rel="icon" type="image/x-icon" href="./images/0001.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harvest: Local Produce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="./images/0001.png">
+    <!-- Preload font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  
-   </div>
-   <header>
-       <div class="logo">
-           <img id="logo-header" src="./logus.png" alt="Harvest Logo">
-       </div>
-       
-
-       <!-- <button id="try-app-button" >Try our app</button> -->
-
-       <!-- <nav>
-           <ul>
-               <li><a href="#home">Home</a></li>
-               <li><a href="#features">Features</a></li>
-               <li><a href="#values">Values</a></li>
-               <li><a href="#team">Team</a></li>
-               <li><a href="#contact">Contact</a></li>
-           </ul>
-       </nav> -->
-   </header>
-
-   <main>
-       <section id="home" class="hero">
-           <div id="Home" class="hero-content">
-               <h2 id="open-text">Welcome to Harvest</h2>
-               <p id="under-open-text">Connecting local produce growers with buyers seamlessly.</p>
-               <video autoplay loop muted playsinline class="main-video">
-                <source src="202408062203.mp4" type="video/mp4">
-                
-            </video>
-           </div>
-       </section>
-
-       <section id="features" class="features">
-           <h2 class="Htwo">App Features</h2>
-           <div class="feature-list">
-               <div class="feature-item">
-                   <img src="./images/Map-Feature-removebg-preview (1).png" alt="Map Feature">
-                   <h3>Find Local Vendors </h3>
-                   <p>Locate nearby vendors easily using our interactive map.</p>
-               </div>
-               <div class="feature-item">
-                   <img src="./images/Chat-Feature-removebg-preview.png" alt="Chat Feature">
-                   <h3>Chat with Vendors</h3>
-                   <p>Communicate directly with vendors through in-app chat.</p>
-               </div>
-               <div class="feature-item">
-                   <img src="./images/Profile-Feature-removebg-preview.png" alt="Profile Feature">
-                   <h3>Profile Management</h3>
-                   <p>Manage your profile, view your transactions, and more.</p>
-               </div>
-           </div>
-       </section>
-
-       <section id="values" class="values">
-           <h2 class="Htwo">Our Core Values</h2>
-           <div class="value-list">
-               <div class="value-item">
-                   <h3>Sustainability</h3>
-                   <p>Promoting eco-friendly practices in local agriculture.</p>
-               </div>
-               <div class="value-item">
-                   <h3>Community</h3>
-                   <p>Building strong relationships between produce growers and consumers.</p>
-               </div>
-               <div class="value-item">
-                   <h3>Quality</h3>
-                   <p>Ensuring the highest quality of produce and services.</p>
-               </div>
-           </div>
-       </section>
-
-       <!-- <section id="team" class="team">
-        <h2 class="Htwo">Our Team</h2>
-        <div class="team-videos">
-            <div class="video-container">
-                <video controls>
-                    <source src="./videos/team1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
+    
+    <!-- Floating Pill Navigation -->
+    <nav class="floating-nav">
+        <div class="nav-content">
+            <a href="#" class="logo-pill">
+                <img src="./logus.png" alt="Harvest Logo">
+                <span class="logo-text">Harvest</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#values">Values</a>
+                <a href="#contact">Contact</a>
             </div>
-            <div class="video-container">
-                <video controls>
-                    <source src="./videos/team2.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+            <a href="https://apps.apple.com/us/app/harvest-local-produce/id6756837163" class="btn-pill" target="_blank">Download</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Immersive Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="video-background">
+                <video autoplay loop muted playsinline poster="./images/splashscreenweb.png">
+                    <source src="202408062203.mp4" type="video/mp4">
                 </video>
+                <div class="overlay"></div>
             </div>
+            
+            <div class="hero-content-wrapper">
+                <div class="hero-text-glass">
+                    <h1 class="hero-title">Fresh food<br>from your<br><span class="highlight-text">neighbors</span></h1>
+                    <p class="hero-subtitle">Connecting local growers with buyers. Fresh, sustainable, and strictly local.</p>
+                    <div class="hero-actions">
+                        <a href="https://apps.apple.com/us/app/harvest-local-produce/id6756837163" class="app-store-btn-large" target="_blank">
+                            <i class="fab fa-apple"></i>
+                            <div class="btn-text">
+                                <span class="small">Download on the</span>
+                                <span class="large">App Store</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-wave">
+                <svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#F9FBF8" fill-opacity="1" d="M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,224C672,245,768,267,864,250.7C960,235,1056,181,1152,165.3C1248,149,1344,171,1392,181.3L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Bento Grid Features Feature -->
+        <section id="features" class="features-section">
+            <div class="section-header">
+                <span class="badge">Features</span>
+                <h2>The Harvest Experience</h2>
+            </div>
+            
+            <div class="bento-grid">
+                <!-- Large Card: Map -->
+                <div class="bento-card card-large map-card">
+                    <div class="card-content">
+                        <h3>Find Local Vendors</h3>
+                        <p>Explore an interactive map to discover fresh produce right in your neighborhood.</p>
+                        <div class="visual-mockup map-mockup">
+                            <img src="./images/Map-Feature-removebg-preview (1).png" alt="Map Feature">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium Card: Chat -->
+                <div class="bento-card card-medium chat-card">
+                    <div class="card-content">
+                        <div class="icon-circle"><i class="fas fa-comments"></i></div>
+                        <h3>Direct Chat</h3>
+                        <p>Connect instantly with growers to ask questions or arrange pickups.</p>
+                        <div class="visual-mockup">
+                             <img src="./images/Chat-Feature-removebg-preview.png" alt="Chat Feature">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medium Card: Profile -->
+                <div class="bento-card card-medium profile-card">
+                    <div class="card-content">
+                        <div class="icon-circle"><i class="fas fa-user-circle"></i></div>
+                        <h3>Your Profile</h3>
+                        <p>Track your orders, favorites, and community impact.</p>
+                         <div class="visual-mockup">
+                             <img src="./images/Profile-Feature-removebg-preview.png" alt="Profile Feature">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values Ticker/Cards -->
+        <section id="values" class="values-section">
+            <div class="section-header">
+                <span class="badge">Values</span>
+                <h2>Grown with Purpose</h2>
+            </div>
+            
+            <div class="values-container">
+                <div class="value-card glass-card">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Sustainability</h3>
+                    <p>Reducing food miles by eating local.</p>
+                </div>
+                <div class="value-card glass-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>Community</h3>
+                    <p>Strengthening neighborhood bonds.</p>
+                </div>
+                <div class="value-card glass-card">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Quality</h3>
+                    <p>Freshness you can taste, straight from the source.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-container glass-panel">
+                <div class="contact-content">
+                    <h2>Get in Touch</h2>
+                    <p>Have questions? We'd love to hear from you.</p>
+                    <form>
+                        <div class="input-group">
+                            <input type="text" placeholder="Name" required>
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Email" required>
+                        </div>
+                        <div class="input-group">
+                            <textarea placeholder="Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <img src="./images/Footer_Logo.png" alt="Harvest" class="footer-logo">
+            <p>&copy; 2025 Harvest. All rights reserved.</p>
         </div>
-    </section> -->
+    </footer>
 
-       <section id="contact" class="contact">
-           <h2 class="Htwo">Contact Us</h2>
-           <form>
-               <input type="text" placeholder="Your Name" required>
-               <input type="email" placeholder="Your Email" required>
-               <textarea placeholder="Your Message" required></textarea>
-               <button type="submit">Send Message</button>
-           </form>
-       </section>
-       
-       <div id="appPopup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn">&times;</span>
-            <h2>Interested in Our App?</h2>
-            <p>Thank you for response!</p>
-            <button id="yesButton" class="popup-button">Yes</button>
-            <button id="noButton" class="popup-button">No</button>
-        </div>
-    </div>
-
-       
-   </main>
-
-   <footer>
-       <p>&copy; 2024 Harvest. All rights reserved.</p>
-   </footer>
-
-   <script src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
